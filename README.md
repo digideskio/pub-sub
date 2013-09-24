@@ -1,16 +1,16 @@
-Setup:
+#Setup:
 
-$ mongo
-> use pubsub
-> db.createCollection('messages', { capped: true, size: 100000 })
-> db.messages.insert({})
+    $ mongo
+    use pubsub
+    db.createCollection('messages', { capped: true, size: 100000 })
+    db.messages.insert({})
 
-Subscribe:
+#Subscribe:
 
-$ nodemon subscribe.js
+    $ nodemon subscribe.js
 
-Publish:
+#Publish:
 
-$ mongo
-> use pubsub
-> db.messages.insert({ message: 'Hello world', time: Date.now() }) 
+    $ mongo
+    use pubsub
+    db.messages.insert({ message: 'Hello world', time: Date.now() }) 
